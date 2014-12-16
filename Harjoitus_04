@@ -1,0 +1,33 @@
+/*	Jani Kähkönen/H9575
+Harjoitus_4	19.9.2014	*/
+
+#include <iostream>		//input & output stream. global scope alkaa.
+using namespace std;	//nimiavaruus
+#define MINIMI 10     //määritetään muuttujalle kiinteä arvo (vanha)
+const int MAKSIMI = 20;	//määritetään muuttujalle kiinteä arvo (uusi)
+int summa;            //muuttuja jota ei ole määritetty
+void Laske(int, int);	// functionin esittely
+void main()
+{
+	int luku1 = 2;    //muuttujan arvoksi asetetaan 2
+	int luku2;				//muuttuja ilman arvoa. ei oleteta nollaksi.
+	cout << "Syota luku: ";	//syötä luku teksti. ääkköset ei toimi.
+	cin >> luku2;           //ottaa syötteen näppäimistöltä kyseiseen muuttujaan.
+	Laske(luku1, luku2);    //functio kutsu (laske)
+	if (summa < MINIMI)     //jos summa on pienempi kuin MINIMI muuttujan arvo.
+	{
+		cout << "Summa on pienempi kuin " << MINIMI << "\n";	//tulostaa tekstiä ja näyttää muuttujan MINIMI.
+	}
+	if (summa > MAKSIMI)	// muuten jos summa on suurempi kuin muuttuja MAKSIMI arvo.
+	{
+		cout << "Summa on suurempi kuin " << MAKSIMI << "\n";	//tulostaa tekstiä ja näyttää muuttujan MAKSIMI.
+	}
+	if(summa > MINIMI && summa < MAKSIMI)	//muuten jos mikään aikasempi ehto ei täyty.
+	{
+		cout << "Summa on MINIMIN ja MAKSIMIN valissa. \n";	//tulostaa tekstiä...
+	}
+}
+void Laske(int eka, int toka)	//laskenta functio joka ottaa 2 arvoa.
+{
+	summa = eka + toka;			//laskutoimitus josta saadaan summa.
+}
